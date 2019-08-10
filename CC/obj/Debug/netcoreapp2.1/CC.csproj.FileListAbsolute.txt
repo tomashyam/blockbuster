@@ -29,3 +29,4 @@ C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.Views.pdb
 C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.dll
 C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.pdb
 C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.csproj.CopyComplete
+C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.csprojAssemblyReference.cache
