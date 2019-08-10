@@ -1,0 +1,29 @@
+﻿<div class="row text-center">
+    <div class="col-md-5">
+        <a href="/Catalog/ByCategory?category=@ViewBag.Categories[0]" class="thumbnail">
+            <img src="@string.Format("images/{0}.{1}", ViewBag.Categories[0], "jpg")" />
+        </a>
+    </div>
+    <div class="col-md-6">
+        @{
+            for (var i = 1; i < ViewBag.Categories.Length; i += 2)
+            {
+                <div class="row img-container">
+                    <div class="col-xs-4 col-md-4">
+                        <a href="/Catalog/ByCategory?category=@ViewBag.Categories[i]" class="thumbnail">
+                            <img src="@string.Format("images/{0}.{1}", ViewBag.Categories[i], "jpg")" />
+                        </a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 col-md-4">
+                            <a class="thumbnail" href="/Catalog/ByCategory?category=@ViewBag.Categories[i+1]">
+                                <img src="@string.Format("images/{0}.{1}", ViewBag.Categories[i+1], "jpg")" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
