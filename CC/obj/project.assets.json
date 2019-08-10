@@ -11799,23 +11799,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eytan\\.nuget\\packages\\": {},
+    "C:\\Users\\דניאל אסרף\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eytan\\Documents\\projects\\BB\\CC\\CC.csproj",
+      "projectUniqueName": "C:\\Dev\\git\\blockbuster\\CC\\CC.csproj",
       "projectName": "CC",
-      "projectPath": "C:\\Users\\Eytan\\Documents\\projects\\BB\\CC\\CC.csproj",
-      "packagesPath": "C:\\Users\\Eytan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eytan\\Documents\\projects\\BB\\CC\\obj\\",
+      "projectPath": "C:\\Dev\\git\\blockbuster\\CC\\CC.csproj",
+      "packagesPath": "C:\\Users\\דניאל אסרף\\.nuget\\packages\\",
+      "outputPath": "C:\\Dev\\git\\blockbuster\\CC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Eytan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\דניאל אסרף\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
