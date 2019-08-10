@@ -1,0 +1,127 @@
+﻿@model CC.Models.Movie
+@{
+    ViewData["Title"] = "Product Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Details</h1>
+<div>
+    <h2>Product: @Html.DisplayFor(model => model.Name)</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            <text id="cc_pid">@Model.ID</text>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)₪
+        </dd>
+        <dt>
+            כמות לייקים
+        </dt>
+        <dd>
+            @Model.Likes.Count()
+        </dd>
+        <dd>
+            @if (Model.Likes.Any(l => l.User.ID == ViewData["UserId"] as string))
+            {
+                <button class="btn btn-success disabled" > אהבתה !
+                </button>
+                }
+                else
+                {
+                <button class="btn btn-primary" onclick="
+    var id = document.getElementById('cc_pid').innerText;
+        $.ajax({
+            url: '/Like/Add',
+            type: 'POST',
+            data: JSON.stringify(id),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json'
+    })
+    $(document).ajaxStop(function(){
+    window.location.reload();
+});
+    ">
+                    סמן אהבתי!
+                </button>
+            }
+        </dd>
+        <dd>
+            <img src="@Html.DisplayFor(model => model.ImageUrl)" alt="Movie Image" style="height:150px;width:150px" />
+        </dd>
+    </dl>
+    <div>
+        <h1>@Html.DisplayNameFor(model => model.Comments)</h1>
+        @if (string.IsNullOrWhiteSpace(ViewData["UserId"] as string))
+        {
+            <h1>Please connect with facebook to add a comment</h1>
+        }
+        else
+        {
+            <div style="margin: 10px">
+                @using (Html.BeginForm("Add", "Comment", FormMethod.Post))
+                {
+                    @Html.Hidden("ProductId", Model.ID)
+                    @Html.TextArea("Comment", null, new { @style = "width: 100%" })
+                    <input type="submit" value="Add Comment" class="btn btn-default" />
+
+                }
+            </div>
+        }
+        <div class="list-group">
+            @{
+
+                if (Model.Comments != null && Model.Comments.Any())
+                {
+                    foreach (var comment in Model.Comments)
+                    {
+
+                        <div class="col-sm-5" style="width: 100%">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <strong>@comment.Publisher.Name</strong> <span class="text-muted">@comment.Date</span>
+                                </div>
+                                <div class="panel-body">
+                                    @comment.Text
+                                </div>
+                            </div>
+                        </div>
+                    }
+                } }
+        </div>
+    </div>
+</div>
+<div>
+    <div class="fb-share-button"
+         data-href="@Model.ImageUrl"
+         data-layout="button" data-size="large" data-mobile-iframe="true">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+           class="fb-xfbml-parse-ignore">
+            Share
+        </a>
+    </div>
+    <a asp-controller="Home" asp-action="Index">Back to Home Page</a>
+</div>
