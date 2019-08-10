@@ -15,6 +15,12 @@ namespace CC.DAL
             _ccContext = ccContext;
         }
 
+        public void UpdateStore(Cinema storeToUpdate)
+        {
+            _ccContext.Cinema.Update(storeToUpdate);
+            _ccContext.SaveChanges();
+        }
+
         public Cinema GetStoreById(int id)
         {
             return _ccContext.Cinema
@@ -26,6 +32,7 @@ namespace CC.DAL
             return _ccContext.Cinema
                 .ToList();
         }
+
         public IEnumerable<Cinema> GetStoreByName(string name)
         {
             return _ccContext.Cinema
@@ -33,6 +40,11 @@ namespace CC.DAL
                                 .ToList();
         }
 
+        public Cinema GetStroeById(int storeId)
+        {
+            return _ccContext.Cinema
+                .SingleOrDefault(store => store.ID == storeId);
+        }
 
         public void AddStore(Cinema store)
         {
