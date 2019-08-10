@@ -332,3 +332,4 @@ ASALocalRun/
 CC/bin/
 
 CC/obj/
+CC/obj/Debug/netcoreapp2.1/CC.csproj.CoreCompileInputs.cache
