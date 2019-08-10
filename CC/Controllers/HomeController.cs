@@ -1,40 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CC.Models;
+using CC.BL;
+using CC.Data;
+using System;
 
 namespace CC.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ProductBl _productBl;
+
+        public HomeController(CCContext ccContext)
         {
-            return View();
+            _productBl = new ProductBl(ccContext);
         }
 
-        public IActionResult About()
+        public IActionResult Index()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            ViewBag.Categories = Enum.GetValues(typeof(Category));
+            return View(_productBl.GetAllProducts());
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Please Contact Us";
 
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
