@@ -6,9 +6,9 @@
 }
 
 @{
-    if (Model.All(p => p.Category == Model.ElementAt(0).Category))
+    if (Model.All(p => p.Category == Model.ElementAt(0)?.Category))
     {
-        <h2>All products in the catalog from the @Model.ElementAt(0).Category</h2>
+        <h2>All products in the catalog from the @Model.ElementAt(0)?.Category</h2>
     }
     else
     {
