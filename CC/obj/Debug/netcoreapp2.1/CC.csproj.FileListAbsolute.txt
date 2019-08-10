@@ -5,7 +5,6 @@ C:\Users\Eytan\Documents\projects\BB\CC\bin\Debug\netcoreapp2.1\CC.dll
 C:\Users\Eytan\Documents\projects\BB\CC\bin\Debug\netcoreapp2.1\CC.pdb
 C:\Users\Eytan\Documents\projects\BB\CC\bin\Debug\netcoreapp2.1\CC.Views.dll
 C:\Users\Eytan\Documents\projects\BB\CC\bin\Debug\netcoreapp2.1\CC.Views.pdb
-C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.csprojAssemblyReference.cache
 C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.csproj.CoreCompileInputs.cache
 C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.RazorAssemblyInfo.cache
 C:\Users\Eytan\Documents\projects\BB\CC\obj\Debug\netcoreapp2.1\CC.RazorAssemblyInfo.cs
