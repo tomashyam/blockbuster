@@ -6,17 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\About\**" />
-    <Compile Remove="Views\Admin\**" />
-    <Content Remove="Views\About\**" />
-    <Content Remove="Views\Admin\**" />
-    <EmbeddedResource Remove="Views\About\**" />
-    <EmbeddedResource Remove="Views\Admin\**" />
-    <None Remove="Views\About\**" />
-    <None Remove="Views\Admin\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="Migrations\20180826093502_ProdductMigration.cs" />
     <Compile Remove="Migrations\20180826093502_ProdductMigration.Designer.cs" />
     <Compile Remove="Migrations\20180826100526_ProdductMigration.cs" />
@@ -83,6 +72,10 @@
     <Content Remove="wwwroot\images\red_pin.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\About\Index.cshtml" />
+    <None Include="Views\Admin\Index.cshtml" />
+    <None Include="Views\Admin\Login.cshtml" />
+    <None Include="Views\Admin\Search.cshtml" />
     <None Include="wwwroot\lib\bootstrap-4.3.1-dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap-4.3.1-dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap-4.3.1-dist\css\bootstrap-reboot.css.map" />
