@@ -18,10 +18,10 @@
 
 @{
     <table>
-        @{ for (int row = 0; row < Model.Count() / 3; row++)
+        @{ for (int row = 0; row < Math.Ceiling(Model.Count() / 3.0); row++)
             {
                 <tr class="row">
-                    @{ for (int col = 0; col < 3; col++)
+                    @{ for (int col = 0; row * 3 + col < Model.Count() && col < 3 ; col++)
                         {
                             var currProduct = Model.ElementAt(row * 3 + col);
 
