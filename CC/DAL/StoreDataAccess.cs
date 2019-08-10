@@ -15,5 +15,35 @@ namespace CC.DAL
             _ccContext = ccContext;
         }
 
+        public Cinema GetStoreById(int id)
+        {
+            return _ccContext.Cinema
+                .SingleOrDefault(x => x.ID == id);
+        }
+
+        public List<Cinema> GetAllStores()
+        {
+            return _ccContext.Cinema
+                .ToList();
+        }
+        public IEnumerable<Cinema> GetStoreByName(string name)
+        {
+            return _ccContext.Cinema
+                                .Where(s => s.Name.Contains(name))
+                                .ToList();
+        }
+
+
+        public void AddStore(Cinema store)
+        {
+            _ccContext.Cinema.Add(store);
+            _ccContext.SaveChanges();
+        }
+
+        public void DeleteStore(Cinema store)
+        {
+            _ccContext.Cinema.Remove(store);
+            _ccContext.SaveChanges();
+        }
     }
 }
