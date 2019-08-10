@@ -123,5 +123,7 @@
             Share
         </a>
     </div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ID }) |
     <a asp-controller="Home" asp-action="Index">Back to Home Page</a>
 </div>
