@@ -45,13 +45,18 @@
             @Model.Likes.Count()
         </dd>
         <dd>
-            @if (Model.Likes.Any(l => l.User.ID == ViewData["UserId"] as string))
+            @if (string.IsNullOrWhiteSpace(ViewData["UserId"] as string))
             {
-                <button class="btn btn-success disabled" > אהבתה !
+                <h1>Please connect with facebook to add a like</h1>
+            }
+            else if (Model.Likes.Any(l => l.User.ID == ViewData["UserId"] as string))
+            {
+                <button class="btn btn-success disabled">
+                    אהבתה !
                 </button>
-                }
-                else
-                {
+            }
+            else
+            {
                 <button class="btn btn-primary" onclick="
     var id = document.getElementById('cc_pid').innerText;
         $.ajax({
