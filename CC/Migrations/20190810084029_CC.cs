@@ -131,8 +131,6 @@ namespace CC.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Cinema");
 
             migrationBuilder.DropTable(
                 name: "Comment");
@@ -145,6 +143,9 @@ namespace CC.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+    name: "Cinema");
         }
     }
 }
