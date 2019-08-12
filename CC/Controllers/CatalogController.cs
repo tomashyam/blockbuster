@@ -25,6 +25,7 @@ namespace CC.Controllers
 
         public ActionResult Search(Category category, double from, double to)
         {
+            ViewBag.category = category.ToString();
             try
             {
                 if (from <= 0 || to <= 0)
